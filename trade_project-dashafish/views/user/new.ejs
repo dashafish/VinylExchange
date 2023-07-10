@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs')%>
+
+      <!--  <nav>
+            <ul>
+            
+                <li><a class="nav-item" href="/">Home</a></li>
+                <li><a class="nav-item" href="/trades">Trades</a></li>
+                <li><a class="nav-item" href="/trades/new">New Trade</a></li>
+                <li><a class="nav-item " href="/users/login">Login</a></li>
+                <li><a class="nav-item active" href="/users/new">Sign Up</a></li>
+                <li><a class="nav-item " href="/users/profile">Profile</a></li>
+                <li><a class="nav-item" href="/users/logout">Logout</a></li>
+            </ul> 
+        </nav>
+    </header>-->
+    <main>
+        <div class="home-content">
+           <h2>Sign Up</h2> 
+        </div>
+        <div class="home-img">
+            <form action = '/users' class="signUpForm" method = 'POST'>
+                <table>
+                    <tr>
+                        <td><label for="firstName">First Name</label></td>
+                        <td><input type="text" id="firstName" name="firstName" class = "fixed-width" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lastName">Last Name</label></td>
+                        <td><input type="text" id="lastName" name="lastName" class = "fixed-width" required></td>
+                    </tr>
+        
+                    <tr>
+                        <td><label for="email">Email Address</label></td>
+                        <td><input type="email" id="email" name="email" class = "fixed-width" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password</label></td>
+                        <td><input type="password" id="password" name="password" class = "fixed-width" minlength="8" maxlength="64" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" class = "align-right"><button class="signUp">Sign Up</button></td>
+                    </tr>
+                </table>        
+            </form>
+        </div>
+        
+            
+         
+    </main>
+    <%- include('../partials/footer.ejs')%>

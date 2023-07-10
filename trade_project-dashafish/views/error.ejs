@@ -1,0 +1,12 @@
+<%- include('./partials/header.ejs')%>
+
+    <main>
+        <div class="home-content">
+            <h3><%= error.status%> Error</h3>
+           
+        </div> 
+      <div class="home-img">
+        <p><%=error.message %> </p>
+      </div>
+    </main>
+    <%- include('./partials/footer.ejs')%>

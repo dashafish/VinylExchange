@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs')%>
+
+       <!-- <nav>
+            <ul>
+                <li><a class="nav-item" href="/">Home</a></li>
+                <li><a class="nav-item" href="/trades">Trades</a></li>
+                <li><a class="nav-item active" href="/trades/new">New Trade</a></li>
+                <li><a class="nav-item" href="/users/login">Login</a></li>
+                <li><a class="nav-item " href="/users/new">Sign Up</a></li>
+                <li><a class="nav-item " href="/users/profile">Profile</a></li>
+                <li><a class="nav-item" href="/users/logout">Logout</a></li>
+            </ul> 
+        </nav>
+    </header>-->
+   <main>
+    <div class="newTrade-content">
+        <h2>Make A Trade</h2>  
+    </div>
+    
+        <form class="myForm" action="/trades" method="POST">
+            <div class="description">
+                <label for="details">Description</label>
+                <textarea placeholder="Enter any additional details here" name="details" id="details" required minLength="10"></textarea>
+            </div>
+            <div class="info">
+                    <label for="artist">Artist</label>
+                    <input type="text" id="title" name="artist"placeholder="Coldplay" required>
+           
+                    <label for="name"> Vinyl Name</label>
+                    <input type="text" id="name" name="name" placeholder="X&Y" required>
+              
+                <label for="category">Genre</label>
+                <input type="text" id="genre" name="category"placeholder="Jazz" required>
+
+                <label for="condition">Condition</label>
+                <input type="text" id="condition" name="condition" placeholder="New/used" required>
+
+                <label for="status">Status</label>
+                <input type="text" id="status" name="status" placeholder="Available/not" required>
+
+                    <button type="submit" > Submit</button>
+                    </div>
+        </form>
+    
+   </main>
+   <%- include('../partials/footer.ejs')%>

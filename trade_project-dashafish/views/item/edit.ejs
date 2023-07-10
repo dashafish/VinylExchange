@@ -1,0 +1,31 @@
+<%- include('../partials/header.ejs')%>
+
+   <main>
+   
+    
+        <form class="editform" method="POST" action="/trades/<%=item.id%>?_method=PUT">
+            <div class="description">
+                <label for="details">Description</label>
+                <textarea placeholder="edit description" name="details" id="details"required minLength="10"><%= item.details%></textarea></div>
+            <div class="info">
+                 <label for="artist">Artist</label>
+                 <input type="text" id="title" name="artist" value="<%= item.artist %>"placeholder="Coldplay" required>
+           
+                 <label for="name"> Vinyl Name</label>
+                <input type="text" id="name" name="name" value="<%= item.name %>"placeholder="edit vinyl name" required>
+              
+                <label for="category">Genre</label>
+                <input type="text" id="genre" name="category" value="<%= item.category %>"placeholder="edit genre" required>
+
+                <label for="condition">Condition</label>
+                <input type="text" id="condition" name="condition" value="<%= item.condition%>"placeholder="edit condition" required>
+
+                <label for="status">Status</label>
+                <input type="text" id="status" name="status" value="<%= item.status %>" placeholder="edit status" required>
+
+                    <button type="submit" > Send Changes</button>
+                    </div>
+        </form>
+    
+   </main>
+   <%- include('../partials/footer.ejs')%>

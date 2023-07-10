@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dasha Rizvanova">
+    <link rel="icon" type="image/x-icon" href="/images/fav1con.png">
+    <title>Vinyl Exchange</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header> 
+        <h1><a href="/" class="logo"><i class="fa-solid fa-compact-disc"></i> Vinyl House Exchange</a> </h1>
+        <nav>
+            <ul>
+                <li><a class="nav-item" href="/">Home</a></li>
+                <li><a class="nav-item" href="/trades">Trades</a></li>
+                <li><a class="nav-item" href="/trades/new">New Trade</a></li>
+               <% if(!user){ %>
+                    <li><a class="nav-item " href="/users/login">Login</a></li>
+                    <li><a class="nav-item" href="/users/new">Sign Up</a></li>
+               <% }else{ %>
+                    <li><a class="nav-item " href="/users/profile">Profile</a></li>
+                    <li><a class="nav-item" href="/users/logout">Logout</a></li>
+               <% } %>   
+            </ul> 
+
+        </nav>
+       <% if(errorMessages.length > 0){
+                errorMessages.forEach(message =>{ %>
+                      <div class="error"> <%=message%></div>
+           <% });
+       }%>
+
+       <% if(successMessages.length > 0){
+                 successMessages.forEach(message =>{ %>
+                   <div class="success"> <%=message%></div>
+       <% });
+   }%>
+
+    </header>

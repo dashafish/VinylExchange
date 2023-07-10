@@ -1,0 +1,127 @@
+[{
+  "_id": {
+    "$oid": "6446242f47cc87a6d5be3eb0"
+  },
+  "details": "Its impact on music, including jazz, rock, and classical genres, has led writers to also deem it one of the",
+  "artist": "Miles Davis",
+  "name": "Kind of Blue",
+  "category": "Jazz",
+  "condition": "used",
+  "status": "not available",
+  "createdAt": {
+    "$date": "2023-04-24T06:39:43.299Z"
+  },
+  "owner": {
+    "$oid": "644620b8a2edfca4be3b682e"
+  },
+  "image": "/images/MilesDavis.jpeg",
+  "updatedAt": {
+    "$date": "2023-04-24T14:12:46.385Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446249547cc87a6d5be3eb1"
+  },
+  "details": "We Are reached its peak at number 25 on the US Billboard 200 with 18,000 album equivalent units.",
+  "artist": "Jon Batiste",
+  "name": "We Are",
+  "category": "Jazz",
+  "condition": "new",
+  "status": "available",
+  "createdAt": {
+    "$date": "2023-04-24T06:41:25.909Z"
+  },
+  "owner": {
+    "$oid": "644620b8a2edfca4be3b682e"
+  },
+  "image": "/images/JonBatiste.jpeg",
+  "updatedAt": {
+    "$date": "2023-04-24T06:41:25.909Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446251947cc87a6d5be3eb2"
+  },
+  "details": "The album was nominated for Album of the Year at the 2023 Brit Awards.",
+  "artist": "The 1975",
+  "name": "Being Funny in a Foreign Language",
+  "category": "Pop Rock",
+  "condition": "new",
+  "status": "available",
+  "createdAt": {
+    "$date": "2023-04-24T06:43:37.512Z"
+  },
+  "owner": {
+    "$oid": "64462111a2edfca4be3b682f"
+  },
+  "image": "/images/beingfunny1975.jpeg",
+  "updatedAt": {
+    "$date": "2023-04-24T06:43:37.512Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446257b47cc87a6d5be3eb3"
+  },
+  "details": "The cover art of an album is a combination of colours and blocks, which is a representation of the Baudot code.",
+  "artist": "Coldplay",
+  "name": "X&Y",
+  "category": "Pop Rock",
+  "condition": "used ",
+  "status": "available",
+  "createdAt": {
+    "$date": "2023-04-24T06:45:15.372Z"
+  },
+  "owner": {
+    "$oid": "64462111a2edfca4be3b682f"
+  },
+  "image": "/images/coldplay.png",
+  "updatedAt": {
+    "$date": "2023-04-24T06:45:15.372Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644625c647cc87a6d5be3eb4"
+  },
+  "details": "As of February 2023, Rumours has sold over 40 million copies worldwide, making it the sixth best-selling album of the 1970s, and the 12th best-selling album of all time.",
+  "artist": "Fleetwood Mac",
+  "name": "Rumours",
+  "category": "Pop Rock",
+  "condition": "new",
+  "status": "available",
+  "createdAt": {
+    "$date": "2023-04-24T06:46:30.889Z"
+  },
+  "owner": {
+    "$oid": "64462111a2edfca4be3b682f"
+  },
+  "image": "/images/fleetwood.webp",
+  "updatedAt": {
+    "$date": "2023-04-24T06:46:30.889Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64468c1de831dbaa144b7494"
+  },
+  "details": "Sunday Morning Classics is seriously chilled out Nina Simone and is the perfect companion for your easy going Sunday mornings.",
+  "artist": "Nina Simone",
+  "name": "Sunday Morning Classics",
+  "category": "Jazz",
+  "condition": "new",
+  "status": "available",
+  "createdAt": {
+    "$date": "2023-04-24T14:03:09.743Z"
+  },
+  "owner": {
+    "$oid": "644620b8a2edfca4be3b682e"
+  },
+  "image": "/images/ninaSimone.jpg",
+  "updatedAt": {
+    "$date": "2023-04-24T14:03:09.743Z"
+  },
+  "__v": 0
+}]

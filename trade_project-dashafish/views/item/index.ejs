@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs')%>
+
+     
+    <main>
+        <div class="trades-content">
+            <h2>CHOOSE YOUR FAVORITE ALBUM</h2> 
+        </div>
+        <div class="trades-genre">
+           <%if(items.length){ %>
+            <!--create a new map object called categories -->
+            <% const categories = new Map(); %>
+            <!--loop through each item, and add it to the categories using set()-->
+            <% items.forEach(item => categories.set(item.category, (categories.get(item.category) ||
+             []).concat(item))); %>
+            <% for (const [category, items] of categories) { %>
+                <h3><%= category %></h3>
+                <ul>
+                    <% items.forEach(item =>{ %>
+                       <li class="list"> 
+                    
+                     <a class="genre" href="/trades/<%= item.id %>"><%= item.name %></a>
+                     
+                     
+                    </li>
+                   <% }); %>
+                </ul>
+                <% } %>
+            <br>
+           <% } else{ %>
+                <p>There are no stories to display </p>
+           <% } %> 
+ 
+
+
+        </div>
+        
+    </main>
+    <%- include('../partials/footer.ejs')%>

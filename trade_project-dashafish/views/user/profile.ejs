@@ -1,0 +1,124 @@
+
+<%- include('../partials/header.ejs')%>
+
+<main>
+  <div class="home-content">
+    <h3>We missed you <%=user.firstName + " " + user.lastName %>!</h3>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'listings')" id="defaultOpen">Your Listings</button>
+    <button class="tablinks" onclick="openTab(event, 'watchlist')">Your Watch List</button>
+    <button class="tablinks" onclick="openTab(event, 'sentOffers')">Sent Offers</button>
+    <button class="tablinks" onclick="openTab(event, 'receivedOffers')">Received Offers</button>
+  </div>
+
+  <div id="listings" class="tabcontent">
+    <h3 class="profileList">Your Listings:</h3>
+    <div class="item-listing">
+      <% if(items.length){ %>
+        <% items.forEach(item => { %>
+          <div class="item">
+            <a href="/trades/<%= item.id %>" class="userTrade">
+              <img src="<%= item.image %>" alt="<%= item.name %> by <%= item.artist %>">
+              <h4><%= item.name %> by <%= item.artist %></h4>
+              <p><%= item.details %></p>
+            </a>
+            <p>Status: <%= item.status %></p>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p class="no-list">You have not created any listings</p>
+      <% } %>
+    </div>
+  </div>
+
+  <div id="watchlist" class="tabcontent">
+    <h3 class="profileList">Your Watch List:</h3>
+    <div class="item-listing">
+      <% if(watches.length) { %>
+        <% watches.forEach(watch =>{ %>
+          <div class="item">
+            <a href="/trades/<%= watch.watchItem.id %>" class="userTrade">
+              <img src="<%= watch.watchItem.image %>" alt="<%= watch.watchItem.name %> by <%= watch.watchItem.artist %>">
+              <h4><%= watch.watchItem.name %> by <%= watch.watchItem.artist %></h4>
+              <p><%= watch.watchItem.details %></p>
+            </a>
+            <form>
+            <button class="unwatchButton" formmethod="POST" formaction="/trades/<%= watch.watchItem.id%>/watch?_method=DELETE">
+              Unwatch </button> 
+              </form>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p class="no-list">You have not added any listings to your watch list</p>
+      <% } %>
+    </div>
+  </div>
+
+  <div id="sentOffers" class="tabcontent">
+    <h3 class="profileList">Your Wanted Trades:</h3>
+    <div class="item-listing">
+      <% if(sentOffers.length) { %>
+        <% sentOffers.forEach(offer=>{ %>
+          <div class="item">
+            <a href="/trades/<%= offer.wantedItem.id %>" class="userTrade">
+              <img src="<%= offer.wantedItem.image %>" alt="<%= offer.wantedItem.name %> by <%= offer.wantedItem.artist %>">
+              <h4><%= offer.wantedItem.name %> by <%= offer.wantedItem.artist %></h4>
+              <p><%= offer.wantedItem.details %></p>
+            </a>
+            <form>
+              <button class="rejectBtn" type="submit" formmethod="POST" formaction="/trades/offer/<%=offer._id%>?_method=DELETE"> Cancel Offer</button>
+              </form>
+          </div>
+        <% }); %>
+      <% } else { %>
+         <p class="no-list">You have not made any offers</p>
+       <% } %>
+      </div> 
+    </div>
+
+    <div id="receivedOffers" class="tabcontent">
+      <h3 class="profileList">Received Offers:</h3>
+      <div class="item-listing">
+        <% if(receivedOffers.length) { %>
+          <% receivedOffers.forEach(offer=>{ %>
+            <div class="item">
+              <a href="/trades/<%= offer.ownedItem.id %>" class="userTrade">
+                <img src="<%= offer.ownedItem.image %>" alt="<%= offer.ownedItem.name %> by <%= offer.ownedItem.artist %>">
+                <h4><%= offer.ownedItem.name %> by <%= offer.ownedItem.artist %></h4>
+                <p><%= offer.ownedItem.details %></p>
+                <p><%= offer.ownedItem.status %></p>
+              </a>
+              <form>
+                <input type="hidden" name="offerID" value="<%=offer._id%>">
+                <button class="acceptBtn" type="submit" formmethod="POST"formaction="/trades/offer/accept?_method=PUT"> Accept </button>
+                <button class="rejectBtn" type="submit" formmethod="POST" formaction="/trades/offer/<%=offer._id%>?_method=DELETE"> Reject</button>
+                </form>
+            </div>
+          <% }); %>
+        <% } else { %>
+           <p class="no-list">You have not received any offers</p>
+         <% } %>
+        </div> 
+      </div>
+      <script>
+        function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</main>
+
+<%- include('../partials/footer.ejs')%>

@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs')%>
+
+   <main>
+  <div class="vinylStory">
+    <img class="vinylImg" src="<%= item.image %>">
+        <h2 class="name-card"><%= item.name %></h2><br>
+        <h4 class="artist-card">By <%=item.artist %></h4><br>
+        <h4 class="genre-card">Genre is <%= item.category %></h4><br>
+        <h4 class="artist-cond">Condition of the vinyl is <%= item.condition %></h4><br>
+        <h4 class="day-card">Status as of <%=item.createdAt %> is <%= item.status %></h4><br>
+        <h4 class="details-card"><%= item.details %></h4><br>
+        <h4 class="details-card">Listing's owner is <%=item.owner.firstName + ' ' + item.owner.lastName %></h4>
+        <form>
+        <% if(user == item.owner._id){%>
+          <button class="edit" formmethod="GET" formaction="/trades/<%= item.id%>/edit">
+            Edit
+          </button>
+          <button class="edit" formmethod="POST" formaction="/trades/<%= item.id%>?_method=DELETE">
+            Delete
+          </button>
+        <% } else {%>
+          <% if(watch.length){ %>
+            <button class="edit" formmethod="POST" formaction="/trades/<%= item._id%>/watch?_method=DELETE">
+             Unwatch
+            </button>
+          <%} else {%>
+            <button class="edit" formmethod="POST" formaction="/trades/<%= item._id%>/watch">
+              Watch
+            </button>
+          <% } %>
+          <% if(item.status == 'available') {%>
+          <button class="edit" type="submit" formmethod="POST" formaction="/trades/<%=item._id%>/request">Request</button>
+          <%}%>
+        <% } %>
+        </form>
+    </div>   
+   </main>
+   <%- include('../partials/footer.ejs')%>
+
+

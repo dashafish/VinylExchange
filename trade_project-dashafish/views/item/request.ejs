@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <form>
+        <h3 class="profileList">Select One of Your Listings for a Trade: </h3>
+        <div class="item-listing">
+            <% if(ownedItem.length){ %>
+              <% ownedItem.forEach(item => { %>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="ownedItem" value="<%=item._id%>">
+                        <div class="userTrade">
+                            <img src="<%= item.image %>" alt="<%= item.name %> by <%= item.artist %>">
+                            <h4><%= item.name %> by <%= item.artist %></h4>
+                            <p>Status: <%= item.status %></p>
+                        </div>
+                    </label>
+                </div>
+              <% }); %>
+            <% } else { %>
+              <p class="no-list">You do not have any items available</p>
+            <% } %>
+        </div>
+        <h3 class="profileList">Requested Item: </h3>
+        <div class="item">
+            <div class="userTrade">
+                <img src="<%= wantedItem.image %>" alt="<%= wantedItem.name %> by <%= wantedItem.artist %>">
+                <h4><%= wantedItem.name %> by <%= wantedItem.artist %></h4>
+                <p>Status: <%= wantedItem.status %></p>
+            </div>
+        </div>   
+        <input type="hidden" name="receiver" value="<%= wantedItem.owner %>">    
+        <div class="request-buttons">
+            <button class="edit" formmethod="POST" formaction="/trades/<%=wantedItem._id%>/makeOffer">Make offer</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/footer.ejs')%>

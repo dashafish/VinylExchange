@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamont&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik:wght@800&display=swap');
+/*General Styles*/
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Roboto Mono',monospace;
+    line-height: 1.5;
+    background-color: #fff5d7;
+    color:#443235;
+    min-height: 100vh;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+
+header,footer
+{
+    background-color: #664e3f; 
+    font-family: 'Rubik',sans-serif;
+    color: wheat;
+
+    
+}
+input,textarea,button{
+    font:inherit;
+}
+
+/*footer text styling*/
+
+.small{
+    font-size: 0.9rem;
+}
+.centered-text{
+    text-align: center;
+}
+/*footer links styling*/
+.links{
+    display:flex;
+    justify-content: center;
+}
+.links a{
+    padding: 0 1rem;
+}
+.contact:hover, .about:hover{
+        color: #443235;
+        background-color: wheat;
+        border-radius:1rem;
+}
+
+
+/*overall page layout*/
+body{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 6rem 1fr 3rem;
+}
+header{
+    grid-column: 1/4;
+    grid-row: 1;
+    position: sticky;
+    top:0;
+    
+}
+main{
+    grid-column: 2;
+    grid-row: 2;
+    width: 80%;
+    
+    
+}
+footer{
+    grid-column: 1/4;
+    grid-row: 3;
+    position: sticky;
+    bottom: 0;
+
+}
+
+
+/*Header style*/
+
+h1{
+   padding-left: 4rem;
+
+}
+
+nav li{
+    padding-right: 1rem;
+    font-size: 1.5rem;
+}
+
+nav a{
+    color:white;
+}
+
+nav a:hover,
+nav a:active{
+    color: #443235;
+}
+
+a.logo:hover{
+    background-color: #443235;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+
+/*header layout*/
+header{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+nav ul{
+    display: flex;
+    justify-content: end;
+    
+}
+
+/*active elements*/
+.nav-item.active{
+    background-color: #cc9c7e;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+/*styling main content on home page*/
+
+
+main{
+   /* display: flex;*/
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap:2rem;
+    background-color: #eed5bc;
+    padding: 1rem;
+     margin: 1rem auto;
+}
+
+
+/*
+.home-img, .home-content{
+    flex-basis: 300px;
+    flex-grow: 1;
+    max-width: 500px;
+}
+*/
+.home-img, .home-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+}
+.home-img{
+    align-self: start;
+    border-radius: 50px; 
+    margin: 0 auto;
+   
+}
+.home-content{
+    border-radius: 30px;
+    box-shadow: #443235 0px 10px 5px 5px;
+    padding: 1.5rem;
+    background-color: #ffebcd;
+}
+
+/*styling main img*/
+img{
+    border-radius: 5px;
+    
+}
+
+/*styling elements of trades page*/
+.trades-content{
+    border-radius: 30px;
+    box-shadow: #443235 0px 10px 5px 5px;
+    padding: 1.5rem;
+    background-color: #ffebcd;
+}
+.trades-content{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+}
+.trades-genres{
+    margin: 4rem;
+
+}
+a{
+    color: inherit;
+}
+
+ a.genre:hover{
+    color: #cc9c7e;
+    font-size: 18px;
+}
+.list{
+    margin: 5px;
+}
+/*newTrade page*/
+
+.newTrade-content{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+}
+.newTrade-content{
+    border-radius: 30px;
+    box-shadow: #443235 0px 10px 5px 5px;
+    padding: 1.5rem;
+    background-color: #ffebcd;
+}
+/*styling form*/
+ 
+.form *{
+box-sizing: border-box;
+}
+.myForm{
+    display: flex; 
+    padding: 3rem;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+   order: 2;
+}
+.description > textarea{
+   flex: 2;
+    min-width: 20em;
+    max-width: 32em;
+    border-radius: 1em;
+    border-color: wheat;
+}
+
+
+.info{
+    flex: 1;
+    order: 1;
+    margin-right: 2em;
+}
+
+.info input{
+    width: 100%;
+    border-radius: 1em;
+}
+.info input, .info button{
+    padding: 1em;
+    margin-bottom: 1em;
+    border-color: wheat;
+}
+.info button{
+    background-color: #664e3f;
+    color: wheat;
+    border-radius: 1rem;
+    width: 100%;
+   
+}
+button:hover{
+    font-size: 18px;
+}
+/*trade page styling*/
+/*styling cards on the trades page*/
+.vinylImg{
+    width: 200px;
+    height: 200px;
+}
+
+.vinylStory {
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out;
+    padding: 2rem 1rem;
+    width:80%;
+    margin:auto;
+    
+    
+  }
+
+  .vinylStory:hover {
+    box-shadow: 0px 4px 8px rgb(136,68,53);
+    
+  }
+.edit{
+    background-color: #664e3f;
+    color:wheat;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    width:35%;
+    padding: .4rem;
+    
+}
+/*login page*/
+.login, .signUp{
+    background-color: #664e3f;
+    color:wheat;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    width:100%;
+    padding: .4rem;
+}
+.loginForm input, .signUpForm input{
+    margin-bottom: 1rem;
+    border-radius: 0.4em;
+    border-color: wheat;
+    width: 20em;
+    padding: 0.5em;
+}
+/*styling flash messages*/
+.success{
+    background-color: #c2d2b2;
+    color:white;
+    width:60%;
+    text-align: center;
+    margin:auto;
+    margin-top: 1.7rem;
+    border-radius: 0.4em;
+    border-color: wheat;
+}
+.error{
+    background-color: #5f2c3e;
+    color:white;
+    width:60%;
+    text-align: center;
+    margin:auto;
+    margin-top: 1.7rem;
+    border-radius: 0.4em;
+    border-color: wheat;
+}
+.success,.error {
+  animation: flash 2s ease-in-out;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 2;
+    transform: scale(1);
+  }
+}
+
+.userTrade{
+    color:black;
+
+}
+.profileListing{
+    margin-top: 2rem;
+    text-align: center;
+}
+.profileWelcome,.userTrade{
+    text-align: center;
+    color:#5f2c3e
+   
+}
+.home-content {
+    text-align: center;
+   
+  }
+  /*styling personal listing*/
+  
+  .item-listing {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+  }
+  
+  .item {
+    width:30%;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 2px solid #fff5d7;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 1.2rem;
+  
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .item p {
+    margin: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+ 
+.profileList{
+    margin: auto;
+    text-align: center;
+    color:#664e3f;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 2px #443235;
+    border-radius: 3px;
+}
+.no-list {
+   margin: auto;
+   padding: 10px 20px;
+   font-size: 1rem;
+   box-shadow: 1px 1px 2px #443235;
+    border-radius: 3px;
+    margin-top: 2rem;
+  }
+  
+/* tab styling on profile page */
+.tab {
+    display: flex;
+  }
+  
+  /* Tab button */
+  .tab button {
+    background-color: #eed5bc;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #443235;
+    color: #664e3f;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Active tab button */
+  .tab button.active {
+    background-color: #fff5d7;
+  }
+  
+  
+  /* Show active tab content */
+  .tabcontent.show {
+    display: block;
+  }
+  /*styling cancel offer button on sent offer tab, unwatch button on watch tab, and
+  manage offer button on received offers. all on profile page */
+ .unwatchButton{
+    background-color: #664e3f;
+    color: wheat;
+    border-radius: 0.6rem;
+    width: 100%;
+    margin: auto;
+  }
+  .acceptBtn, .rejectBtn{
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.4rem;
+  }
+  .acceptBtn{
+    background-color: wheat;
+    color: #664e3f;
+  }
+  .rejectBtn{
+    background-color: #664e3f;
+    color: wheat;
+  }
